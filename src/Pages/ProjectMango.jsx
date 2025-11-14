@@ -1,0 +1,48 @@
+import React from 'react'
+import Navbar from '../Components/Common/Navbar'
+import Footer from '../Components/Common/Footer'
+import ProjectViewMain from '../Components/ProjectMango/ProjectViewMain'
+import Location from '../Components/ProjectMango/Location'
+import AreaLayout from '../Components/ProjectViewPage/AreaLayout'
+import Configration from '../Components/ProjectViewPage/Configration'
+import CropDetails from '../Components/ProjectViewPage/CropDetails'
+import Ownership from '../Components/ProjectViewPage/Ownership'
+import Highlights from '../Components/ProjectMango/Highlights'
+import Tourist from '../Components/ProjectMango/Tourist'
+import Gallery from '../Components/ProjectMango/Gallery'
+import Benefits from '../Components/ProjectViewPage/Benefits'
+import NearBy from '../Components/ProjectMango/NearBy'
+import WhyUs from '../Components/ProjectViewPage/WhyUs'
+import AboutDeveloper from '../Components/ProjectViewPage/AboutDeveloper'
+import OtherProjects from '../Components/ProjectMango/OtherProjects'
+import WorkTogether from '../Components/ProjectViewPage/Together'
+import Faq from '../Components/ProjectMango/Faq'
+import Video from '../Components/ProjectViewPage/Video'
+
+const ProjectMango = () => {
+    return (
+        <div>
+            <Navbar />
+            <ProjectViewMain />
+            <Location />
+            <AreaLayout/>
+            <Configration/>
+            <Video/>
+            <CropDetails/>
+            <Ownership/>
+            <Highlights/>
+            <Tourist/>
+            <Gallery/>
+            <Benefits/>
+            <NearBy/>
+            <WhyUs/>
+            <AboutDeveloper/>
+            <OtherProjects/>
+            <WorkTogether />
+            <Faq/>
+            <Footer />
+        </div>
+    )
+}
+
+export default ProjectMango

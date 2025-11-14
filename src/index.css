@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@fontsource/instrument-sans/index.css";
+body {
+  @apply font-instrument;
+}
