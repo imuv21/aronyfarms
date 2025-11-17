@@ -32,7 +32,7 @@ const Together = () => {
                 {/* Heading */}
                 <div>
                   <h2 className="text-3xl sm:text-5xl lg:text-[70px] font-medium text-black leading-tight mb-4 sm:mb-6">
-                    Grow something<br className="hidden sm:block" />
+                    Grow something&nbsp;<br className="hidden sm:block" />
                     great together.
                   </h2>
                   <p className="text-[#585858] text-sm sm:text-base font-normal leading-snug max-w-lg mx-auto lg:mx-0">

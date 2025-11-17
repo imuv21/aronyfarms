@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
+
 const EnquiryModal = ({ isOpen, onClose }) => {
+
   const [formData, setFormData] = useState({
     fullName: "",
     mobile: "",

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import ProjectViewMain1 from "../../assets/ProjectViewMain1.png";
 import leaf from "../../assets/leaf.png";
-import EnquiryModal from "../Common/EnquiryModal"; 
+import EnquiryModal from "../Common/EnquiryModal";
+
 
 const ProjectViewMain = () => {
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -34,8 +36,7 @@ const ProjectViewMain = () => {
         </p>
 
         {/* Enquire Now Button */}
-        <button
-          onClick={() => setIsModalOpen(true)}
+        <button onClick={() => setIsModalOpen(true)}
           className="flex items-center gap-2 rounded-full px-4 py-2 bg-[#4BA625] text-white transition-colors w-fit mx-auto hover:bg-[#3d8d1f]"
         >
           <img

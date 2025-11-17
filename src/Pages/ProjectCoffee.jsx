@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '../Components/Common/Navbar'
+import Navbar from '../Components/AboutUs/Navbar'
 import Footer from '../Components/Common/Footer'
 import ProjectViewMain from '../Components/ProjectCoffee/ProjectViewMain'
 import Location from '../Components/ProjectCoffee/Location'
@@ -19,7 +18,11 @@ import WorkTogether from '../Components/ProjectViewPage/Together'
 import Faq from '../Components/ProjectCoffee/Faq'
 import Video from '../Components/ProjectViewPage/Video'
 
+
 const ProjectMango = () => {
+
+    const faagContent = "Located across the rich coffee belts of Hassan, Sakaleshpur, and Chikkamagaluru, this farm is developed to bring out the true flavour and strength of South Indian coffee. The land is blessed with cool weather, misty mornings, and fertile soil that supports healthy coffee cultivation. Each plot is prepared with shaded planting, proper irrigation, and expert care to maintain steady growth. Managed by Arony Farm, the estate follows natural farming methods, regular maintenance, and scientific monitoring to ensure quality yields and long term farm value.";
+
     return (
         <div>
             <Navbar />
@@ -27,7 +30,7 @@ const ProjectMango = () => {
             <Location />
             <AreaLayout />
             <Configration />
-            <Video/>
+            <Video faagContent={faagContent} />
             <CropDetails />
             <Ownership />
             <Highlights />
@@ -42,7 +45,7 @@ const ProjectMango = () => {
             <Faq />
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default ProjectMango
+export default ProjectMango;

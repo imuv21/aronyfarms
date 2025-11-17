@@ -5,19 +5,21 @@ import WorkTogether from '../Components/HomeMain/WorkTogether'
 import Footer from '../Components/Common/Footer'
 import Gallery from '../Components/ProjectPage/Gallery'
 
+
 const ProjectPage = () => {
+
   return (
     <div>
-        <Navbar/>
-        <ProjectPageMain/>
-        <Farms/>
-        <Gallery/>
-        <WorkTogether/>
-        <Footer/>
+      <Navbar />
+      <ProjectPageMain />
+      <Farms />
+      <Gallery />
+      <WorkTogether />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default ProjectPage
+export default ProjectPage;
 
 

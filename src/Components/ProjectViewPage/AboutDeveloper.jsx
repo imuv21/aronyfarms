@@ -1,21 +1,23 @@
-import React from 'react';
-import { Download, MessageCircle } from 'lucide-react';
+import React, { useState } from "react";
 import leafgrn from "../../assets/leaf-grn.png";
 import leaf from "../../assets/leaf.png";
 import logo from "../../assets/logo2.png";
+import EnquiryModal from "../Common/EnquiryModal";
 
 
 const AboutDeveloper = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-12">
           {/* Left: Title */}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-3">
-
-
               <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 hover:border-green-500 transition-colors w-fit">
                 <img
                   src={leafgrn}
@@ -34,7 +36,6 @@ const AboutDeveloper = () => {
           </div>
 
           {/* Center: Logo */}
-
           <div className="flex-shrink-0">
             <img
               src={logo}
@@ -46,7 +47,7 @@ const AboutDeveloper = () => {
           {/* Right: Description */}
           <div className="flex-1 max-w-md">
             <p className="text-[#585858]  text-justify text-[20px] leading-tight">
-              Lorem ipsum dolor sit amet consectetur. Molestie gravida et arcu integer sit sit at vitae. Et nibh quisque dui eget. Odio massa ultrices consequat mi bibendum ut sit lorem etiam. Nisi consequat porttitor praesent sociis lobortis eget metus. Pulvinar convallis quis viverra
+              Every project is designed to give landowners a hassle-free farming experience with planned development, scientific cultivation, and continuous on-ground monitoring. Our team ensures the right soil preparation, irrigation systems, plantation methods, and seasonal care for healthy crop growth. With clear documentation, upfront costing, and consistent updates.
             </p>
           </div>
         </div>
@@ -98,15 +99,21 @@ const AboutDeveloper = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-2 px-8 py-3 bg-white text-[#4BA625] border-2 border-[#4BA625] rounded-full font-medium hover:bg-green-50 transition-colors w-full sm:w-auto justify-center">
+
+          <button onClick={() => setIsModalOpen(true)} className="flex items-center gap-2 px-8 py-3 bg-white text-[#4BA625] border-2 border-[#4BA625] rounded-full font-medium hover:bg-green-50 transition-colors w-full sm:w-auto justify-center">
             <img src={leafgrn} alt="" className="w-5 h-5 object-contain" />
             Inquire Now
           </button>
+
           <button className="flex items-center gap-2 px-8 py-3 bg-[#4BA625] text-white rounded-full font-medium hover:bg-green-700 transition-colors w-full sm:w-auto justify-center">
             <img src={leaf} className="w-5 h-5 object-contain" alt="" />
             Download Project Overview
           </button>
+
         </div>
+
+        {/* Enquiry Modal */}
+        <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </div>
   );

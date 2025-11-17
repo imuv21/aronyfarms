@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '../Components/Common/Navbar'
+import Navbar from '../Components/AboutUs/Navbar'
 import Footer from '../Components/Common/Footer'
 import ProjectViewMain from '../Components/ProjectViewPage/ProjectViewMain'
 import Location from '../Components/ProjectViewPage/Location'
@@ -19,7 +18,11 @@ import WorkTogether from '../Components/ProjectViewPage/Together'
 import Faq from '../Components/ProjectViewPage/Faq'
 import Video from '../Components/ProjectViewPage/Video'
 
+
 const ProjectSandalwood = () => {
+
+    const faagContent = "Set in a naturally thriving environment, this sandalwood farm is carefully nurtured with Arony Farm’s trusted farm management system. Each plot is prepared with enriched soil, scientific planting methods, and reliable water support to ensure healthy and uniform sandalwood growth. The farm is secured, well organized, and monitored by experts for long-term performance. With sustainable cultivation and professional upkeep, it provides a stable, future ready farm asset with excellent appreciation potential.";
+
     return (
         <div>
             <Navbar />
@@ -27,7 +30,7 @@ const ProjectSandalwood = () => {
             <Location />
             <AreaLayout />
             <Configration />
-            <Video/>
+            <Video faagContent={faagContent} />
             <CropDetails />
             <Ownership />
             <Highlights />
@@ -42,7 +45,7 @@ const ProjectSandalwood = () => {
             <Faq />
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default ProjectSandalwood
+export default ProjectSandalwood;

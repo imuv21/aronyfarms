@@ -4,7 +4,9 @@ import logo from "../../assets/logo2.png";
 import { Link } from "react-router-dom";
 import leaf from "../../assets/leaf.png";
 
+
 const Navbar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownTimeoutRef = useRef(null);
@@ -43,14 +45,7 @@ const Navbar = () => {
             </Link>
 
             {/* Projects Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              {/* <button className="flex items-center hover:text-green-400 text-[16px]">
-                Projects <Plus size={16} className="ml-1" />
-              </button> */}
+            <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
                 to="/project-page"
                 className="flex items-center hover:text-green-400 text-[16px]"
@@ -60,13 +55,6 @@ const Navbar = () => {
 
               {isDropdownOpen && (
                 <div className="absolute left-0 mt-2 w-40 bg-white/90 text-gray-800 rounded-md shadow-lg backdrop-blur-md">
-                  {/* <Link
-                    to="/project-page"
-                    className="block px-4 py-2 text-[16px] hover:bg-gray-100"
-                  >
-                    Projects
-                  </Link> */}
-
                   <Link
                     to="/project-sandalwood"
                     className="block px-4 py-2 text-[16px] hover:bg-gray-100"
@@ -90,7 +78,7 @@ const Navbar = () => {
             </div>
 
             <Link to="/blog" className="hover:text-green-400 text-[16px]">
-              Blog
+              Blogs
             </Link>
             <Link to="/" className="hover:text-green-400 text-[16px]">
               Events
@@ -136,13 +124,6 @@ const Navbar = () => {
             About Us
           </Link>
 
-          {/* Mobile Project Dropdown */}
-          {/* <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full flex justify-between items-center px-4 py-2 hover:bg-gray-100"
-          >
-            Projects <Plus size={16} />
-          </button> */}
           <Link
             to="/project-page"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -153,12 +134,6 @@ const Navbar = () => {
 
           {isDropdownOpen && (
             <div className="pl-6">
-              {/* <Link
-                to="/project-page"
-                className="block px-4 py-2 text-sm hover:bg-gray-100"
-              >
-                Projects
-              </Link> */}
               <Link
                 to="/project-sandalwood"
                 className="block px-4 py-2 text-sm hover:bg-gray-100"
@@ -181,11 +156,11 @@ const Navbar = () => {
           )}
 
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">
-            Blog
+            Blogs
           </Link>
 
           <Link to="/" className="block px-4 py-2 hover:bg-gray-100">
-            Evnets
+            Events
           </Link>
 
           <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100">

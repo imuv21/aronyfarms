@@ -15,9 +15,9 @@ const Farms = () => {
             title: "Arony Sandalwood Farm",
             image: sandalwoodfarm,
             description:
-                "Arony Sandalwood Farm offers investors a rare opportunity to own and profit from managed sandalwood cultivation in India's most sought-after agroforestry corridor.",
+                "Arony Sandalwood Farm provides a rare opportunity to invest in government-approved sandalwood cultivation backed by structured growth, secure management, and strong long-term value.",
             additionalInfo:
-                "Our expert team ensures 100% hassle-free, ecologically resilient plantation management and transparent reporting from the day you invest to the day of harvest.",
+                "With precision plantation methods, continuous field monitoring, and transparent reporting, our team handles everything from soil preparation to maturity, ensuring a fully managed, stress-free ownership journey.",
             features: [
                 "Sandalwood plantation paired with ideal host crops",
                 "Legally compliant, professionally managed estate",
@@ -37,9 +37,9 @@ const Farms = () => {
             title: "Arony Mango Farm",
             image: mangofarm,
             description:
-                "Arony Mango Farm offers investors a rare opportunity to own and profit from managed mango cultivation in India's most sought-after agroforestry corridor.",
+                "Arony Mango Farm gives investors a unique chance to own premium farmland developed for high-quality mango cultivation in Karnataka’s most fertile horticulture zone.",
             additionalInfo:
-                "Our expert team ensures 100% hassle-free, ecologically resilient plantation management and transparent reporting from the day you invest to the day of harvest.",
+                "Our team manages the orchard end-to-end with expert care, scientific nutrition cycles, and regular progress updates, ensuring a smooth, worry-free experience from planting to harvest.",
             features: [
                 "Mango orchard integrated with sandalwood plantation",
                 "Legally compliant, professionally managed estate",
@@ -59,9 +59,9 @@ const Farms = () => {
             title: "Arony Coffee Farm",
             image: coffeefarm,
             description:
-                "Arony Coffee Farm offers investors a rare opportunity to own and profit from managed coffee cultivation in India's most sought-after agroforestry corridor.",
+                "Arony Coffee Farm offers investors access to managed coffee estates located in Karnataka’s renowned high-altitude coffee belt. The plantations are developed for rich, sustainable yields with optional agroforestry integration.",
             additionalInfo:
-                "Our expert team ensures 100% hassle-free, ecologically resilient plantation management and transparent reporting from the day you invest to the day of harvest.",
+                "From day one, our experts oversee plantation health, rainfall-based irrigation planning, and eco-friendly farm maintenance, giving you a smooth, transparent, and rewarding farming experience.",
             features: [
                 "Coffee plantation integrated with sandalwood trees",
                 "Legally compliant, professionally managed estate",

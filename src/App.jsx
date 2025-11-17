@@ -9,6 +9,7 @@ import Blog from './Pages/Blog'
 import BlogView from './Pages/BlogView'
 import ProjectPage from './Pages/ProjectPage'
 
+
 export default function App() {
   return (
     <Router>
@@ -16,12 +17,12 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/Project-page" element={<ProjectPage />} />
         <Route path="/project-sandalwood" element={<ProjectSandalwood />} />
         <Route path="/project-mango" element={<ProjectMango />} />
         <Route path="/project-coffee" element={<ProjectCoffee />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog-view" element={<BlogView />} />
-        <Route path="/Project-page" element={<ProjectPage />} />
       </Routes>
     </Router>
   );

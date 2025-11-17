@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '../Components/Common/Navbar'
+import Navbar from '../Components/AboutUs/Navbar'
 import HomeMain from '../Components/HomeMain/HomeMain'
 import AboutUs from '../Components/HomeMain/AboutUs'
 import AboutUs1 from '../Components/HomeMain/AboutUs1'
@@ -12,25 +11,27 @@ import Blogs from '../Components/HomeMain/Blogs'
 import WorkTogether from '../Components/HomeMain/WorkTogether'
 import Faq from '../Components/HomeMain/Faq'
 import Footer from '../Components/Common/Footer'
-const Home = () => {
-  return (
 
+
+const Home = () => {
+
+  return (
     <div>
       <Navbar />
       <HomeMain />
       <AboutUs />
-      <AboutUs1/>
-      <Approach/>
-      <KeyPillars/>
-      <Expertise/>
-      <ChooseUs/>
-      <Investors/>
-      <Blogs/>
-      <WorkTogether/>
-      <Faq/>
-      <Footer/>
+      <AboutUs1 />
+      <Approach />
+      <KeyPillars />
+      <Expertise />
+      <ChooseUs />
+      <Investors />
+      <Blogs />
+      <WorkTogether />
+      <Faq />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

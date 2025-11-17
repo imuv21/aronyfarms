@@ -93,12 +93,12 @@ const GetInTouch = () => {
                 <Globe className="w-5 h-5 text-[#CF7A19] mt-1 flex-shrink-0" />
 
                 <a
-                  href="https://aronyfarms.vercel.app"
+                  href="https://www.aronyfarms.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#4BA424] text-[16px] font-medium hover:underline"
                 >
-                  aronyfarms.vercel.app
+                  www.aronyfarms.com
                 </a>
               </div>
             </div>
