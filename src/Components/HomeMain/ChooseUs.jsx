@@ -75,7 +75,7 @@ const ChooseUs = () => {
 
                 {/* Text badge */}
                 <div className="absolute bottom-3 left-3 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <span className="text-white font-normal text-[14px]">Co-Founder</span>
+                  <span className="text-white font-normal text-[14px]">Founder</span>
                 </div>
               </div>
 
