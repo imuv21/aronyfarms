@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownTimeoutRef = useRef(null);
 
-  // ---- Dropdown hover behavior (5s delay) ----
+
   const handleMouseEnter = () => {
     clearTimeout(dropdownTimeoutRef.current);
     setIsDropdownOpen(true);
@@ -21,7 +21,7 @@ const Navbar = () => {
     clearTimeout(dropdownTimeoutRef.current);
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 5000); // 5 seconds delay
+    }, 1000);
   };
 
   return (
@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
 
               {isDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-40 bg-white/90 text-gray-800 rounded-md shadow-lg backdrop-blur-md">
+                <div className="absolute left-0 mt-2 w-[200px] bg-white/90 text-gray-800 rounded-md shadow-lg backdrop-blur-md">
                   <Link
                     to="/project-sandalwood"
                     className="block px-4 py-2 text-[16px] hover:bg-gray-100"
@@ -65,13 +65,19 @@ const Navbar = () => {
                     to="/project-mango"
                     className="block px-4 py-2 text-[16px] hover:bg-gray-100"
                   >
-                    Mango
+                    The Hampi Highlands
                   </Link>
                   <Link
-                    to="/project-coffee"
+                    to="/project-coffee-malnad-mist"
                     className="block px-4 py-2 text-[16px] hover:bg-gray-100"
                   >
-                    Coffee
+                    The Malnad Mist
+                  </Link>
+                  <Link
+                    to="/project-coffee-mountains-breath"
+                    className="block px-4 py-2 text-[16px] hover:bg-gray-100"
+                  >
+                    The Mountain’s Breath
                   </Link>
                 </div>
               )}
@@ -144,13 +150,19 @@ const Navbar = () => {
                 to="/project-mango"
                 className="block px-4 py-2 text-sm hover:bg-gray-100"
               >
-                Mango
+                The Hampi Highlands
               </Link>
               <Link
-                to="/project-coffee"
+                to="/project-coffee-malnad-mist"
                 className="block px-4 py-2 text-sm hover:bg-gray-100"
               >
-                Coffee
+                The Malnad Mist
+              </Link>
+              <Link
+                to="/project-coffee-mountains-breath"
+                className="block px-4 py-2 text-sm hover:bg-gray-100"
+              >
+                The Mountain’s Breath
               </Link>
             </div>
           )}

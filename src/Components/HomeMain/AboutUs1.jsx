@@ -9,15 +9,26 @@ import leaf from "../../assets/leaf.png";
 import leafgrn from "../../assets/leaf-grn.png";
 import leafsgrn from "../../assets/leafs.png";
 
+
 const AboutUs1 = () => {
+
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
   const projects = [
     {
-      title: "Arony Coffee Farm",
+      title: "The Malnad Mist, Sakleshpur - Coffee Estate",
       image: layerMain1,
-      link: "/project-coffee",
+      link: "/project-coffee-malnad-mist",
+      description1:
+        "Arony Coffee Farm offers investors a rare opportunity to own and profit from managed coffee cultivation in India's most sought-after agro-forestry corridor.",
+      description2:
+        "Our expert team ensures 100% hassle-free, ecologically resilient plantation management and transparent reporting from the day you invest to the day of harvest.",
+    },
+    {
+      title: "The Mountain’s Breath, Chikkamagaluru - Coffee Estate",
+      image: layerMain1,
+      link: "/project-coffee-mountains-breath",
       description1:
         "Arony Coffee Farm offers investors a rare opportunity to own and profit from managed coffee cultivation in India's most sought-after agro-forestry corridor.",
       description2:
@@ -33,7 +44,7 @@ const AboutUs1 = () => {
         "Our expert team ensures 100% hassle-free, ecologically resilient plantation management and transparent reporting from the day you invest to the day of harvest.",
     },
     {
-      title: "Hampi highland - Mango Farm",
+      title: "The Hampi Highlands - Mango Farm",
       image: layerMain2,
       link: "/project-mango",
       description1:
@@ -118,10 +129,7 @@ const AboutUs1 = () => {
         </div>
 
         {/* Scroll-Synced Project Section */}
-        <div
-          ref={containerRef}
-          className="relative w-full max-w-6xl mx-auto h-[300vh]"
-        >
+        <div ref={containerRef} className="relative w-full max-w-6xl mx-auto h-[300vh]">
           <div className="sticky top-0 h-screen flex items-center justify-center">
             <div className="relative w-full h-[400px] sm:h-[300px] lg:h-[500px]">
               {projects.map((project, i) => {

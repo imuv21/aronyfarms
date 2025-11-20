@@ -34,7 +34,7 @@ const Farms = () => {
         },
         {
             id: 2,
-            title: "Arony Mango Farm",
+            title: "The Hampi Highlands",
             image: mangofarm,
             description:
                 "Arony Mango Farm gives investors a unique chance to own premium farmland developed for high-quality mango cultivation in Karnataka’s most fertile horticulture zone.",
@@ -47,16 +47,16 @@ const Farms = () => {
                 "Transparent progress reporting, government-approved cultivation",
             ],
             stats: {
-                type: "Ayurvedic Living",
+                type: "Mango Farm",
                 location: "THEME",
-                acres: "130 Acres",
+                acres: "100 Acres",
                 acresLocation: "THEME",
             },
             link: "/project-mango",
         },
         {
             id: 3,
-            title: "Arony Coffee Farm",
+            title: "The Malnad Mist, Sakleshpur",
             image: coffeefarm,
             description:
                 "Arony Coffee Farm offers investors access to managed coffee estates located in Karnataka’s renowned high-altitude coffee belt. The plantations are developed for rich, sustainable yields with optional agroforestry integration.",
@@ -69,13 +69,35 @@ const Farms = () => {
                 "Transparent progress reporting, government-approved cultivation",
             ],
             stats: {
-                type: "Ayurvedic Living",
+                type: "Coffee Estate",
                 location: "THEME",
-                acres: "130 Acres",
+                acres: "120 Acres",
                 acresLocation: "THEME",
             },
             link: "/project-coffee",
         },
+        {
+            id: 3,
+            title: "The Mountain’s Breath, Chikkamagaluru",
+            image: coffeefarm,
+            description:
+                "Arony Coffee Farm offers investors access to managed coffee estates located in Karnataka’s renowned high-altitude coffee belt. The plantations are developed for rich, sustainable yields with optional agroforestry integration.",
+            additionalInfo:
+                "From day one, our experts oversee plantation health, rainfall-based irrigation planning, and eco-friendly farm maintenance, giving you a smooth, transparent, and rewarding farming experience.",
+            features: [
+                "Coffee plantation integrated with sandalwood trees",
+                "Legally compliant, professionally managed estate",
+                "Farmland ownership in 10, 20, 30 gunta plot options",
+                "Transparent progress reporting, government-approved cultivation",
+            ],
+            stats: {
+                type: "Coffee Estate",
+                location: "THEME",
+                acres: "60 Acres",
+                acresLocation: "THEME",
+            },
+            link: "/project-coffee",
+        }
     ];
 
     return (

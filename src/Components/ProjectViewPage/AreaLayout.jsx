@@ -1,10 +1,21 @@
 import React from 'react'
 import leafgrn from "../../assets/leaf-grn.png";
+import { useLocation } from 'react-router-dom';
 
 const AreaLayout = () => {
+
+  const location = useLocation();
+
+  const acresValue = (() => {
+    if (location.pathname === "/project-mango") return "100 Acres";
+    if (location.pathname === "/project-coffee-malnad-mist") return "120 Acres";
+    if (location.pathname === "/project-coffee-mountains-breath") return "60 Acres";
+    return "130 Acres";
+  })();
+
   const stats = [
     {
-      value: '15 Acres',
+      value: acresValue,
       label: 'Total Land Area'
     },
     {
@@ -19,7 +30,8 @@ const AreaLayout = () => {
       value: '24/7',
       label: 'On-Site Team'
     }
-  ]
+  ];
+
 
   return (
     <div className="bg-[#F4F4F4] py-12 px-4 sm:px-6 lg:px-8">
