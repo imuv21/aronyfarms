@@ -2,9 +2,16 @@ import React, { useState } from 'react'
 import faq1 from '../../assets/faq1.png'
 import leaf from "../../assets/leaf.png";
 import leafgrn from "../../assets/leaf-grn.png";
+import { motion } from "framer-motion";
+import { useInViewTrigger } from "../utils";
+
 
 
 const Faq = () => {
+
+    const [leftRef, leftInView] = useInViewTrigger();
+    const [rightRef, rightInView] = useInViewTrigger();
+
     const [openFaq, setOpenFaq] = useState(0);
 
     const faqData = [
@@ -60,6 +67,8 @@ const Faq = () => {
         }
     ];
 
+    const faqTriggers = faqData.map(() => useInViewTrigger());
+
     const toggleFaq = (id) => {
         setOpenFaq(openFaq === id ? null : id);
     };
@@ -74,148 +83,153 @@ const Faq = () => {
 
                 {/* Header Section with Image */}
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
-
-                    {/* Left - Text Content */}
-                    <div className="flex flex-col justify-center">
-
-                        <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 hover:border-green-500 transition-colors w-fit">
-                            <img
-                                src={leafgrn}
-                                alt="leaf icon"
-                                className="w-5 h-5 object-contain"
-                            />
-                            <span className="text-black text-[16px] font-medium">FAQs</span>
-                        </div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-[70px] font-medium text-gray-900 leading-tight mb-6">
-                            Everything you<br />
-                            need to know.
-                        </h2>
-
-                        <p className="text-[#585858] text-[16px] font-normal leading-relaxed max-w-lg">
-                            Explore answers to the most common queries we receive from farmers, partners, and innovators around the world.
-                        </p>
+                    <div className="overflow-hidden">
+                        <motion.div
+                            ref={leftRef} initial={{ x: -120, opacity: 0 }}
+                            animate={leftInView ? { x: 0, opacity: 1 } : { x: -120, opacity: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }} className="flex flex-col justify-center" style={{ pointerEvents: leftInView ? "auto" : "none" }}
+                        >
+                            <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 hover:border-green-500 transition-colors w-fit">
+                                <img
+                                    src={leafgrn}
+                                    alt="leaf icon"
+                                    className="w-5 h-5 object-contain"
+                                />
+                                <span className="text-black text-[16px] font-medium">FAQs</span>
+                            </div>
+                            <h2 className="text-4xl sm:text-5xl lg:text-[70px] font-medium text-gray-900 leading-tight mb-6">
+                                Everything you<br />
+                                need to know.
+                            </h2>
+                            <p className="text-[#585858] text-[16px] font-normal leading-relaxed max-w-lg">
+                                Explore answers to the most common queries we receive from farmers, partners, and innovators around the world.
+                            </p>
+                        </motion.div>
                     </div>
 
-                    {/* Right - Professional Image */}
-                    <div className="relative mx-auto w-[95%] sm:w-[90%] lg:w-[85%] rounded-md overflow-hidden shadow-2xl h-64 sm:h-[360px] lg:h-[420px]">
-                        <img
-                            src={faq1}
-                            alt="Professional"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-6 left-6 right-6 flex items-center justify-center space-x-3">
-                            <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
-                                <img
-                                    src={leaf}
-                                    alt="leaf icon"
-                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                />
-                                <span>Driven</span>
-                            </button>
+                    <div className="overflow-hidden">
+                        <motion.div
+                            ref={rightRef} initial={{ x: 120, opacity: 0 }}
+                            animate={rightInView ? { x: 0, opacity: 1 } : { x: 120, opacity: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="relative mx-auto w-[95%] sm:w-[90%] lg:w-[85%] rounded-md overflow-hidden shadow-2xl h-64 sm:h-[360px] lg:h-[420px]"
+                            style={{ pointerEvents: rightInView ? "auto" : "none" }}
+                        >
+                            <img
+                                src={faq1}
+                                alt="Professional"
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-center space-x-3">
+                                <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
+                                    <img
+                                        src={leaf}
+                                        alt="leaf icon"
+                                        className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                    />
+                                    <span>Driven</span>
+                                </button>
 
-                            <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
-                                <img
-                                    src={leaf}
-                                    alt="leaf icon"
-                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                />
-                                <span>Rooted</span>
-                            </button>
+                                <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
+                                    <img
+                                        src={leaf}
+                                        alt="leaf icon"
+                                        className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                    />
+                                    <span>Rooted</span>
+                                </button>
 
-                            <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
-                                <img
-                                    src={leaf}
-                                    alt="leaf icon"
-                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                />
-                                <span>Impactful</span>
-                            </button>
-                        </div>
-
+                                <button className="backdrop-blur-md bg-white/20 text-white font-medium px-5 py-2.5 rounded-full hover:bg-white/30 transition-colors shadow-lg flex items-center space-x-2">
+                                    <img
+                                        src={leaf}
+                                        alt="leaf icon"
+                                        className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                    />
+                                    <span>Impactful</span>
+                                </button>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* FAQ Grid - Two Columns */}
+
                 <div className="grid lg:grid-cols-2 gap-6">
-
-                    {/* Left Column FAQs */}
                     <div className="space-y-4">
-                        {leftColumnFaqs.map((faq) => (
-                            <div
-                                key={faq.id}
-                                className={`
-                  ${openFaq === faq.id ? 'bg-[#035925]' : 'bg-white'}
-                  rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl
-                `}
-                            >
-                                <button
-                                    onClick={() => toggleFaq(faq.id)}
-                                    className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
-                                >
-                                    <span className={`
-                    ${openFaq === faq.id ? 'text-white' : 'text-gray-900'}
-                    font-semibold text-[20px] font-semibold transition-colors
-                  `}>
-                                        {faq.question}
-                                    </span>
-                                    <span className={`
-                    ${openFaq === faq.id ? 'text-white rotate-45' : 'text-gray-700'}
-                    text-2xl font-light transition-all duration-300 flex-shrink-0
-                  `}>
-                                        +
-                                    </span>
-                                </button>
+                        {leftColumnFaqs.map((faq, idx) => {
+                            // global index in faqData
+                            const globalIndex = idx; // 0..4
+                            const [ref, inView] = faqTriggers[globalIndex];
 
-                                {openFaq === faq.id && (
-                                    <div className="px-6 pb-5 animate-fadeIn">
-                                        <p className="text-white text-[16px]  font-normal leading-tight">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                            return (
+                                <motion.div
+                                    key={faq.id}
+                                    ref={ref}
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                                    transition={{ duration: 0.6, ease: "easeOut", delay: globalIndex * 0.02 }}
+                                    className={` ${openFaq === faq.id ? "bg-[#035925]" : "bg-white"} rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl`}
+                                >
+                                    <button
+                                        onClick={() => toggleFaq(faq.id)}
+                                        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
+                                    >
+                                        <span className={`${openFaq === faq.id ? "text-white" : "text-gray-900"} font-semibold text-[20px] transition-colors`}>
+                                            {faq.question}
+                                        </span>
+                                        <span className={`${openFaq === faq.id ? "text-white rotate-45" : "text-gray-700"} text-2xl font-light transition-all duration-300 flex-shrink-0`}>
+                                            +
+                                        </span>
+                                    </button>
+
+                                    {openFaq === faq.id && (
+                                        <div className="px-6 pb-5 animate-fadeIn">
+                                            <p className="text-white text-[16px] font-normal leading-tight">{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            );
+                        })}
                     </div>
 
-                    {/* Right Column FAQs */}
                     <div className="space-y-4">
-                        {rightColumnFaqs.map((faq) => (
-                            <div
-                                key={faq.id}
-                                className={`
-                  ${openFaq === faq.id ? 'bg-[#035925]' : 'bg-white'}
-                  rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl
-                `}
-                            >
-                                <button
-                                    onClick={() => toggleFaq(faq.id)}
-                                    className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
-                                >
-                                    <span className={`
-                    ${openFaq === faq.id ? 'text-white' : 'text-gray-900'}
-                    font-semibold text-base sm:text-lg transition-colors
-                  `}>
-                                        {faq.question}
-                                    </span>
-                                    <span className={`
-                    ${openFaq === faq.id ? 'text-white rotate-45' : 'text-gray-700'}
-                    text-2xl font-light transition-all duration-300 flex-shrink-0
-                  `}>
-                                        +
-                                    </span>
-                                </button>
+                        {rightColumnFaqs.map((faq, idx) => {
+                            // compute global index (5..9)
+                            const globalIndex = idx + 5;
+                            const [ref, inView] = faqTriggers[globalIndex];
 
-                                {openFaq === faq.id && (
-                                    <div className="px-6 pb-5 animate-fadeIn">
-                                        <p className="text-white/90 text-sm sm:text-base leading-relaxed">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                            return (
+                                <motion.div
+                                    key={faq.id}
+                                    ref={ref}
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={inView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                                    transition={{ duration: 0.6, ease: "easeOut", delay: (globalIndex) * 0.08 }}
+                                    className={` ${openFaq === faq.id ? "bg-[#035925]" : "bg-white"} rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl`}
+                                >
+                                    <button
+                                        onClick={() => toggleFaq(faq.id)}
+                                        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
+                                    >
+                                        <span className={`${openFaq === faq.id ? "text-white" : "text-gray-900"} font-semibold text-base sm:text-lg transition-colors`}>
+                                            {faq.question}
+                                        </span>
+                                        <span className={`${openFaq === faq.id ? "text-white rotate-45" : "text-gray-700"} text-2xl font-light transition-all duration-300 flex-shrink-0`}>
+                                            +
+                                        </span>
+                                    </button>
+
+                                    {openFaq === faq.id && (
+                                        <div className="px-6 pb-5 animate-fadeIn">
+                                            <p className="text-white/90 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
+
             </div>
 
             <style jsx>{`

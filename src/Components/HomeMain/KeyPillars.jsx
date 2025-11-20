@@ -1,7 +1,10 @@
 import leafgrn from "../../assets/leaf-grn.png";
 import pillarss from "../../assets/pillars.png";
+import { useInViewTrigger } from "../utils";
+
 
 const KeyPillars = () => {
+
   const pillars = [
     {
       title: 'Sustainable Agriculture Practice',
@@ -29,7 +32,6 @@ const KeyPillars = () => {
         'Beyond profits, Hasiru Farms is committed to reforesting barren lands, reviving traditional farming practices, and restoring biodiversity, ensuring your investment nurtures both the environment and heritage.',
     },
   ];
-  
 
   return (
     <div className="relative min-h-screen w-full">
@@ -43,8 +45,6 @@ const KeyPillars = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-
-
 
       {/* Content */}
       <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
@@ -77,42 +77,59 @@ const KeyPillars = () => {
             </div>
           </div>
 
-
           {/* Pillars Section */}
           <div className="grid gap-6">
-            {/* First Row - 3 Columns */}
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pillars.slice(0, 3).map((pillar, index) => (
-                <div
-                  key={index}
-                  className="bg-white/20 backdrop-blur-md border border-gray-300 rounded-2xl p-6 hover:bg-white/30 transition-all duration-300"
-                >
-                  <h3 className="text-[22px] font-semibold text-white mb-4">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-white text-[16px] font-normal leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
+              {pillars.slice(0, 3).map((pillar, index) => {
+
+                const [ref, inView] = useInViewTrigger();
+                return (
+                  <div
+                    key={index} ref={ref}
+                    className="bg-white/20 backdrop-blur-md border border-gray-300 rounded-2xl p-6 hover:bg-white/30 transition-all duration-300"
+                    style={{
+                      opacity: inView ? 1 : 0,
+                      transform: inView ? "translateY(0px)" : "translateY(40px)",
+                      transitionDelay: `${index * 0.2}s`,
+                    }}
+                  >
+                    <h3 className="text-[22px] font-semibold text-white mb-4">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-white text-[16px] font-normal leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                )
+              })}
             </div>
 
-            {/* Second Row - 2 Columns, full width each */}
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
-              {pillars.slice(3, 5).map((pillar, index) => (
-                <div
-                  key={index + 3}
-                  className="bg-white/20 backdrop-blur-md border border-gray-300 rounded-2xl p-6 hover:bg-white/30 transition-all duration-300"
-                >
-                  <h3 className="text-[22px] font-semibold text-white mb-4">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-white text-[16px] font-normal leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
+              {pillars.slice(3, 5).map((pillar, index) => {
+
+                const [ref, inView] = useInViewTrigger();
+                return (
+                  <div
+                    key={index + 3} ref={ref}
+                    className="bg-white/20 backdrop-blur-md border border-gray-300 rounded-2xl p-6 hover:bg-white/30 transition-all duration-300"
+                    style={{
+                      opacity: inView ? 1 : 0,
+                      transform: inView ? "translateY(0px)" : "translateY(40px)",
+                      transitionDelay: `${(index + 3) * 0.2}s`,
+                    }}
+                  >
+                    <h3 className="text-[22px] font-semibold text-white mb-4">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-white text-[16px] font-normal leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                )
+              })}
             </div>
+
           </div>
         </div>
       </div>

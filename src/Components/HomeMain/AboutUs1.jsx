@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+import { useInViewTrigger, useCountUp } from "../utils";
 import layerMain1 from '../../assets/layer-main.png';
 import layerMain2 from '../../assets/ProjectViewMain2.png';
 import layerMain3 from '../../assets/ProjectViewMain1.png';
@@ -14,6 +14,8 @@ const AboutUs1 = () => {
 
   const containerRef = useRef(null);
   const navigate = useNavigate();
+
+  const [statsRef, statsInView] = useInViewTrigger();
 
   const projects = [
     {
@@ -100,32 +102,41 @@ const AboutUs1 = () => {
     <div className="min-h-screen bg-white py-0 px-3 sm:py-6 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-0 sm:space-y-10">
         {/* Stats Section */}
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-24 sm:mb-0">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 hover:shadow-md transition-shadow"
-            >
-              <div className="space-y-3">
-                <div className="w-8 h-8">
-                  <img
-                    src={stat.icon}
-                    alt={stat.label}
-                    className="w-full h-full object-contain"
-                  />
+        <div ref={statsRef} className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-24 sm:mb-0">
+          {stats.map((stat, index) => {
+
+            const endValue = parseInt(stat.value); // 98, 5, 300
+            const displayValue = useCountUp(statsInView ? endValue : 0);
+
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="space-y-3">
+                  <div className="w-8 h-8">
+                    <img
+                      src={stat.icon}
+                      alt={stat.label}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h3 className="text-[60px] font-medium text-black whitespace-nowrap">
+                    {displayValue}
+                    {stat.value.includes("%") && "%"}
+                    {stat.value.includes("+") && "+"}
+                    {stat.value.includes("Acres") && " Acres"}
+                  </h3>
+                  <p className="text-[20px] font-semibold text-black">
+                    {stat.label}
+                  </p>
+                  <p className="text-[16px] text-[#585858] leading-tight">
+                    {stat.description}
+                  </p>
                 </div>
-                <h3 className="text-[60px] font-medium text-black whitespace-nowrap">
-                  {stat.value}
-                </h3>
-                <p className="text-[20px] font-semibold text-black">
-                  {stat.label}
-                </p>
-                <p className="text-[16px] text-[#585858] leading-tight">
-                  {stat.description}
-                </p>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* Scroll-Synced Project Section */}
