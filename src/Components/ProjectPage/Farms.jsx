@@ -10,28 +10,28 @@ import coffeefarm from '../../assets/farm3.png';
 
 const Farms = () => {
     const farms = [
-        {
-            id: 1,
-            title: "Arony Sandalwood Farm",
-            image: sandalwoodfarm,
-            description:
-                "Arony Sandalwood Farm provides a rare opportunity to invest in government-approved sandalwood cultivation backed by structured growth, secure management, and strong long-term value.",
-            additionalInfo:
-                "With precision plantation methods, continuous field monitoring, and transparent reporting, our team handles everything from soil preparation to maturity, ensuring a fully managed, stress-free ownership journey.",
-            features: [
-                "Sandalwood plantation paired with ideal host crops",
-                "Legally compliant, professionally managed estate",
-                "Farmland ownership in 10, 20, 30 gunta plot options",
-                "Transparent progress reporting, government-approved cultivation",
-            ],
-            stats: {
-                type: "Ayurvedic Living",
-                location: "THEME",
-                acres: "130 Acres",
-                acresLocation: "THEME",
-            },
-            link: "/project-sandalwood",
-        },
+        // {
+        //     id: 1,
+        //     title: "Arony Sandalwood Farm",
+        //     image: sandalwoodfarm,
+        //     description:
+        //         "Arony Sandalwood Farm provides a rare opportunity to invest in government-approved sandalwood cultivation backed by structured growth, secure management, and strong long-term value.",
+        //     additionalInfo:
+        //         "With precision plantation methods, continuous field monitoring, and transparent reporting, our team handles everything from soil preparation to maturity, ensuring a fully managed, stress-free ownership journey.",
+        //     features: [
+        //         "Sandalwood plantation paired with ideal host crops",
+        //         "Legally compliant, professionally managed estate",
+        //         "Farmland ownership in 10, 20, 30 gunta plot options",
+        //         "Transparent progress reporting, government-approved cultivation",
+        //     ],
+        //     stats: {
+        //         type: "Ayurvedic Living",
+        //         location: "THEME",
+        //         acres: "130 Acres",
+        //         acresLocation: "THEME",
+        //     },
+        //     link: "/project-sandalwood",
+        // },
         {
             id: 2,
             title: "The Hampi Highlands",

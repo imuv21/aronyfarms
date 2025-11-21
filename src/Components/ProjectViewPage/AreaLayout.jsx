@@ -18,10 +18,10 @@ const AreaLayout = () => {
       value: acresValue,
       label: 'Total Land Area'
     },
-    {
-      value: '6000 sq.ft',
-      label: 'Aroha & Amara'
-    },
+    // {
+    //   value: '6000 sq.ft',
+    //   label: 'Aroha & Amara'
+    // },
     {
       value: '2',
       label: 'Treehouses'

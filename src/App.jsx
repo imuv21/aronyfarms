@@ -18,7 +18,7 @@ export default function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/Project-page" element={<ProjectPage />} />
-        <Route path="/project-sandalwood" element={<ProjectSandalwood />} />
+        {/* <Route path="/project-sandalwood" element={<ProjectSandalwood />} /> */}
         <Route path="/project-mango" element={<ProjectMango />} />
         <Route path="/project-coffee-malnad-mist" element={<ProjectCoffee />} />
         <Route path="/project-coffee-mountains-breath" element={<ProjectCoffee />} />
